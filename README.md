@@ -23,13 +23,13 @@
     - [2. 我的PowerShell无法运行此脚本，提示“因为在此系统上禁止运行脚本”](#2-我的powershell无法运行此脚本提示因为在此系统上禁止运行脚本)
   
 ## What This Script Does
-Automatically navigates to the C:\Program Files\Dell\SysMgt\iDRACTools\IPMI directory.
-Prompts the user to enter the server IP, username, and password.
-Allows the user to select fan mode (Manual/Auto).
-If Manual is chosen, prompts for the RPM percentage (1–100), converts it to hexadecimal, and executes the corresponding command.
-If Auto is selected, it directly executes the automatic fan command.
-The script runs in a loop until the user inputs exit to quit.
-It remembers the last entered IP/username. Pressing Enter in the next loop will reuse these values, though the password must be re-entered (for security reasons, passwords are not cached).
+- Automatically navigates to the C:\Program Files\Dell\SysMgt\iDRACTools\IPMI directory.
+- Prompts the user to enter the server IP, username, and password.
+- Allows the user to select fan mode (Manual/Auto).
+- If Manual is chosen, prompts for the RPM percentage (1–100), converts it to hexadecimal, and executes the corresponding command.
+- If Auto is selected, it directly executes the automatic fan command.
+- The script runs in a loop until the user inputs exit to quit.
+- It remembers the last entered IP/username. Pressing Enter in the next loop will reuse these values, though the password must be re-entered (for security reasons, passwords are not cached).
 
 ## Preparations Before Use
 ### Enable IPMI Management on the Target Server
@@ -39,8 +39,9 @@ If the management software is not yet installed on your computer, visit [DELL Su
 
 ## Usage Instructions
 
-Download this project's source code, save the script as `fan_control.ps1`, and ensure PowerShell is launched as an administrator before running. Execute the script by entering the command: `./fan_control.ps1`
-Then follow the script prompts to input the corresponding information and easily adjust your server fans.
+1. Download this project's source code, save the script as `fan_control.ps1`, and ensure PowerShell is launched as an administrator before running. Execute the script by entering the command: `./fan_control.ps1`
+2. Then follow the script prompts to input the corresponding information and easily adjust your server fans.
+3. If the server experiences a power outage (i.e. complete power loss rather than a normal shutdown or reboot), the IPMI configuration will be lost and the script will need to be run again to reconfigure the fan speeds. Normal power cycling while the server is switched on will not affect this.
 
 ## Frequently Asked Questions
 ### 1. I cannot locate my `ipmitools` directory
@@ -49,13 +50,13 @@ Then follow the script prompts to input the corresponding information and easily
 - PowerShell's security policy flags this script as unsafe and blocks execution. Simply grant permissions by running PowerShell with administrator privileges and entering the command `set-ExecutionPolicy RemoteSigned` to modify the policy.
 
 ## 这个脚本会做到
-自动进入 C:\Program Files\Dell\SysMgt\iDRACTools\IPMI 目录。
-让用户输入服务器 IP、用户名、密码。
-让用户选择风扇模式（手动/自动）。
-如果选择手动，就再输入转速百分比（1–100），自动转换成十六进制，并执行相应命令。
-如果选择自动，就直接执行自动风扇命令。
-脚本在循环里运行，直到用户输入 exit 才退出。
-记住上一次输入的 IP / 用户名，下次循环时直接按 Enter 就会沿用之前的值且密码依然需要重新输入（出于安全考虑，不缓存密码）。
+- 自动进入 C:\Program Files\Dell\SysMgt\iDRACTools\IPMI 目录。
+- 让用户输入服务器 IP、用户名、密码。
+- 让用户选择风扇模式（手动/自动）。
+- 如果选择手动，就再输入转速百分比（1–100），自动转换成十六进制，并执行相应命令。
+- 如果选择自动，就直接执行自动风扇命令。
+- 脚本在循环里运行，直到用户输入 exit 才退出。
+- 记住上一次输入的 IP / 用户名，下次循环时直接按 Enter 就会沿用之前的值且密码依然需要重新输入（出于安全考虑，不缓存密码）。
 
 ## 使用前的准备工作
 ### 开启受控服务器的IPMI管理功能
@@ -65,8 +66,9 @@ Then follow the script prompts to input the corresponding information and easily
 
 ## 使用方法
 
-下载本项目源码，保存脚本为fan_control.ps1，运行时请确保以管理员身份启动 PowerShell。然后运行脚本，输入命令./fan_control.ps1
-然后根据脚本提示，输入对应的信息即可轻松调整服务器风扇。
+1. 下载本项目源码，保存脚本为fan_control.ps1，运行时请确保以管理员身份启动 PowerShell。然后运行脚本，输入命令./fan_control.ps1
+2. 然后根据脚本提示，输入对应的信息即可轻松调整服务器风扇。
+3. 如果服务器发生了断电（完全断电而不是正常关机或重启），ipmi配置会丢失，需要重新运行脚本配置风扇转速。服务器通电情况下正常的开关机不影响。
 
 ## 常见问题
 ### 1. 我找不到我的ipmitools目录
