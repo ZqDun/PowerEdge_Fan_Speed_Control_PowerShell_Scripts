@@ -1,10 +1,10 @@
 # Dell iDRAC Fan Control Script - PowerShell 
 ## 基于戴尔ipmi工具的服务器风扇调速Powershell脚本
 
-## Contents
+## Contents 目录
 - [Dell iDRAC Fan Control Script - PowerShell](#dell-idrac-fan-control-script---powershell)
   - [基于戴尔ipmi工具的服务器风扇调速Powershell脚本](#基于戴尔ipmi工具的服务器风扇调速powershell脚本)
-  - [Contents](#contents)
+  - [Contents 目录](#contents-目录)
   - [What This Script Does](#what-this-script-does)
   - [Preparations Before Use](#preparations-before-use)
     - [Enable IPMI Management on the Target Server](#enable-ipmi-management-on-the-target-server)
@@ -13,7 +13,6 @@
   - [Frequently Asked Questions](#frequently-asked-questions)
     - [1. I cannot locate my `ipmitools` directory](#1-i-cannot-locate-my-ipmitools-directory)
     - [2. My PowerShell cannot run this script, showing “Script execution is disabled on this system”](#2-my-powershell-cannot-run-this-script-showing-script-execution-is-disabled-on-this-system)
-  - [目录](#目录)
   - [这个脚本会做到](#这个脚本会做到)
   - [使用前的准备工作](#使用前的准备工作)
     - [开启受控服务器的IPMI管理功能](#开启受控服务器的ipmi管理功能)
@@ -22,8 +21,7 @@
   - [常见问题](#常见问题)
     - [1. 我找不到我的ipmitools目录](#1-我找不到我的ipmitools目录)
     - [2. 我的PowerShell无法运行此脚本，提示“因为在此系统上禁止运行脚本”](#2-我的powershell无法运行此脚本提示因为在此系统上禁止运行脚本)
-
-
+  
 ## What This Script Does
 Automatically navigates to the C:\Program Files\Dell\SysMgt\iDRACTools\IPMI directory.
 Prompts the user to enter the server IP, username, and password.
@@ -49,18 +47,6 @@ Then follow the script prompts to input the corresponding information and easily
 - Ensure you downloaded the IPMI tools directly from Dell and did not change the installation path. The default location is `C:\Program Files\Dell\SysMgt\iDRACTools\IPMI`. If this is not the case, verify your IPMI tool installation path and modify the incorrect path in the script to the correct one.
 ### 2. My PowerShell cannot run this script, showing “Script execution is disabled on this system”
 - PowerShell's security policy flags this script as unsafe and blocks execution. Simply grant permissions by running PowerShell with administrator privileges and entering the command `set-ExecutionPolicy RemoteSigned` to modify the policy.
-
-## 目录
-  - [基于戴尔ipmi工具的服务器风扇调速Powershell脚本](#目录)
-  - [这个脚本会做到](#这个脚本会做到)
-  - [使用前的准备工作](#使用前的准备工作)
-    - [开启受控服务器的IPMI管理功能](#开启受控服务器的ipmi管理功能)
-    - [确认管理端安装了Dell ipmi管理工具](#确认管理端安装了dell-ipmi管理工具)
-  - [使用方法](#使用方法)
-  - [常见问题](#常见问题)
-    - [1. 我找不到我的ipmitools目录](#1-我找不到我的ipmitools目录)
-    - [2. 我的PowerShell无法运行此脚本，提示“因为在此系统上禁止运行脚本”](#2-我的powershell无法运行此脚本提示因为在此系统上禁止运行脚本)
-
 
 ## 这个脚本会做到
 自动进入 C:\Program Files\Dell\SysMgt\iDRACTools\IPMI 目录。
